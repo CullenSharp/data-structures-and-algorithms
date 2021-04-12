@@ -80,7 +80,7 @@ const speaker = (words, callback) => {
   const salutation = [];
 
   words.forEach((value) => {
-    value = greeting(value);
+    value = callback(value);
     salutation.push(value);
   })
 
@@ -104,11 +104,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
+//expects [8,8,8,8,8]
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i+=1) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,7 +184,6 @@ describe('Testing challenge 3', () => {
   });
 });
 
-// TODO
 describe('Testing challenge 4', () => {
   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);

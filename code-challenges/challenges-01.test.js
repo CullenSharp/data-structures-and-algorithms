@@ -48,7 +48,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 //expects ['HI', 'HOW', 'ARE', 'YOU']
 const allUpperCase = (arr) => {
   const allUpperCase = [];
-  
+
   arr.forEach((value) => {
     value = value.toUpperCase();
     allUpperCase.push(value);
@@ -109,7 +109,7 @@ const addValues = (arr, value) => {
 
 //expects [8,8,8,8,8]
 const addNumbers = (num, arr, times, callback) => {
-  for (let i = 0; i < times; i+=1) {
+  for (let i = 0; i < times; i += 1) {
     callback(arr, num);
   }
   return arr;
@@ -133,8 +133,16 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
+//expects ['apples', 'pears', 'bananas']
 const createList = (availableItems) => {
-  // Solution code here...
+  const availableItems = [];
+  availableItems.forEach((value) => {
+    if (value.available === true) {
+      availableItems.push(value.name);
+    }
+  })
+
+  return availableItems;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -190,7 +198,6 @@ describe('Testing challenge 4', () => {
   });
 });
 
-// TODO
 describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
@@ -200,7 +207,22 @@ describe('Testing challenge 5', () => {
 
 // TODO
 describe('Testing challenge 6', () => {
-  const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
+  const inventory = [{
+    name: 'apples',
+    available: true
+  }, {
+    name: 'pears',
+    available: true
+  }, {
+    name: 'oranges',
+    available: false
+  }, {
+    name: 'bananas',
+    available: true
+  }, {
+    name: 'blueberries',
+    available: false
+  }];
 
   test('It should only add the available items to the list', () => {
     expect(createList(inventory)).toStrictEqual(['apples', 'pears', 'bananas']);

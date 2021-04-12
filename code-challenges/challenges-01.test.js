@@ -44,9 +44,16 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
-
+//expects ['HI', 'HOW', 'ARE', 'YOU']
 const allUpperCase = (arr) => {
-  // Solution code here...
+  const allUpperCase = [];
+  
+  arr.forEach((value) => {
+    value = value.toUpperCase();
+    allUpperCase.push(value);
+  })
+
+  return allUpperCase;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +155,6 @@ describe('Testing challenge 1', () => {
   });
 });
 
-// TODO
 describe('Testing challenge 2', () => {
   test('It should return an array with an exclamation point added to each value of the original array', () => {
     expect(addExclamation(['hi', 'how', 'are', 'you'])).toStrictEqual(['hi!', 'how!', 'are!', 'you!']);

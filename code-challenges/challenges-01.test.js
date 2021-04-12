@@ -44,6 +44,7 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
+
 //expects ['HI', 'HOW', 'ARE', 'YOU']
 const allUpperCase = (arr) => {
   const allUpperCase = [];
@@ -66,12 +67,24 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
+//expects ['HELLO!', '301!', 'STUDENTS!']
 const greeting = (word) => {
-  // Solution code here...
+  let temp;
+  temp = word + '!';
+  temp = temp.toUpperCase();
+
+  return temp;
 };
 
 const speaker = (words, callback) => {
-  // Solution code here...
+  const salutation = [];
+
+  words.forEach((value) => {
+    value = greeting(value);
+    salutation.push(value);
+  })
+
+  return salutation;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,7 +174,6 @@ describe('Testing challenge 2', () => {
   });
 });
 
-// TODO
 describe('Testing challenge 3', () => {
   test('It should return an array of uppercase strings', () => {
     expect(allUpperCase(['hi', 'how', 'are', 'you'])).toStrictEqual(['HI', 'HOW', 'ARE', 'YOU']);

@@ -34,6 +34,7 @@ const addExclamation = (arr) => {
     value = value + '!';
     exclamations.push(value);
   });
+
   return exclamations;
 };
 
@@ -52,7 +53,7 @@ const allUpperCase = (arr) => {
   arr.forEach((value) => {
     value = value.toUpperCase();
     allUpperCase.push(value);
-  })
+  });
 
   return allUpperCase;
 };
@@ -82,7 +83,7 @@ const speaker = (words, callback) => {
   words.forEach((value) => {
     value = callback(value);
     salutation.push(value);
-  })
+  });
 
   return salutation;
 };
@@ -135,14 +136,15 @@ This function should use forEach to populate your grocery list based on the stor
 
 //expects ['apples', 'pears', 'bananas']
 const createList = (availableItems) => {
-  const availableItems = [];
+  const items = [];
+
   availableItems.forEach((value) => {
     if (value.available === true) {
-      availableItems.push(value.name);
+      items.push(value.name);
     }
-  })
+  });
 
-  return availableItems;
+  return items;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,7 +161,24 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
+// takes [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+//expects [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]
 const fizzbuzz = (arr) => {
+  const fizzBuzz = [];
+
+  arr.forEach((value) => {
+      if(value % 3 === 0 && value % 5 === 0) {
+        fizzBuzz.push('Fizz Buzz');
+      } else if (value % 3 === 0) {
+        fizzBuzz.push('Fizz');
+      } else if (value % 5 === 0) {
+        fizzBuzz.push('Buzz');
+      } else {
+        fizzBuzz.push(value);
+      }
+  });
+
+  return fizzBuzz;
   // Solution code here...
 };
 
@@ -205,7 +224,6 @@ describe('Testing challenge 5', () => {
   });
 });
 
-// TODO
 describe('Testing challenge 6', () => {
   const inventory = [{
     name: 'apples',

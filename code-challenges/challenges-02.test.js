@@ -8,11 +8,7 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 ------------------------------------------------------------------------------------------------ */
 //expect [8, 64, 125, -343, 0]
-const raisedToTheThird = (arr) => {
-  const thirdPow = arr.map(value => Math.pow(value, 3));
-  
-  return(thirdPow);
-};
+const raisedToTheThird = arr => arr.map(value => Math.pow(value, 3));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -21,11 +17,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 //expects [3, 4, 6, 12]
-const addOne = (arr) => {
-  const addedOne = arr.map(value => value+1);
-  
-  return addedOne;
-};
+const addOne = arr => arr.map(value => value+1);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -33,11 +25,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 //expects['hello?', '301?', 'students?']
-const addQuestion = (arr) => {
-  const addedQuestion = arr.map(value => value+'?');
-
-  return addedQuestion;
-};
+const addQuestion = arr => arr.map(value => value+'?');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -51,7 +39,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 //expects [1, 16, 32]
 //takes [0, 4, 5]
-const forLoopTwoToThe = (arr) => {
+const forLoopTwoToThe = arr => {
   const twoToThe = [];
   for(const value of arr) {
     twoToThe.push(Math.pow(2, value));
@@ -66,7 +54,7 @@ CHALLENGE 5
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = (arr) => {
+const forEachTwoToThe = arr => {
   const twoToThe = [];
   arr.forEach(value => twoToThe.push(Math.pow(2, value)));
 
@@ -79,10 +67,8 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = (arr) => {
-  const twoToThe = arr.map(value => Math.pow(2, value));
-  return twoToThe;
-};
+const mapTwoToThe = arr => arr.map(value => Math.pow(2, value));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

@@ -49,8 +49,13 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
+//expects [1, 16, 32]
+//takes [0, 4, 5]
 const forLoopTwoToThe = (arr) => {
-  const twoToThe = arr.map(value => Math.pow(2, value));
+  const twoToThe = [];
+  for(const value of arr) {
+    twoToThe.push(Math.pow(2, value));
+  }
 
   return twoToThe;
 };
@@ -62,7 +67,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  const twoToThe = [];
+  arr.forEach(value => twoToThe.push(Math.pow(2, value)));
+
+  return twoToThe;
 };
 
 /* ------------------------------------------------------------------------------------------------

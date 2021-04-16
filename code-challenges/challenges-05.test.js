@@ -34,9 +34,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
-  // Solution code here...
-};
+const addPurchases = (arr) => arr.reduce((acc, cur) => acc + cur.purchasePrice, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -46,9 +44,7 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+const countNumberOfElements = (arr) => arr.reduce((acc, cur) => acc = arr.indexOf(cur)+1, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -106,9 +102,10 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
-  // Solution code here...
-};
+const returnNames = (arr) => arr.reduce((acc, cur) => {
+  acc.push(cur.name);
+  return acc;
+}, []);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -118,9 +115,7 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (str) => {
-  // Solution code here...
-};
+const reversedString = (str) => str.split("").reduce((acc, cur) => cur + acc, "");
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

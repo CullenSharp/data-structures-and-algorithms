@@ -22,9 +22,9 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
-  // Solution code here...
-};
+const getNames = (arr) => (
+  arr.map(value => value.name.split("").reverse().reduce((acc, cur) => acc + cur, []))
+)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2

@@ -8,9 +8,7 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
-  // Solution code here...
-};
+const maxInArray = (arr) => arr.reduce((acc, cur) => acc < cur ? acc = cur : acc ,0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,9 +22,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
-};
+const getCourseKeys = (obj) => Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -36,9 +32,7 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
-  // Solution code here...
-};
+const checkValues = (obj, value) => Object.values(obj).includes(value);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -59,9 +53,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-};
+const updateNumbers = (obj) => Object.entries(obj).map((value) => value.join(": "));
 
 
 
@@ -114,11 +106,7 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
-  return houses;
-};
+const getHouses = (arr) => arr.map(value => Object.values(value.house).join(""));
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -132,10 +120,9 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
-};
+const hasChildrenValues = (arr, character) => (
+  Object.values(arr.reduce((acc, cur) => cur.name === character ? acc = cur : acc, {}))[2] instanceof Array
+);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

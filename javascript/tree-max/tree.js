@@ -24,6 +24,7 @@ module.exports = class BinaryTree {
     walk(this.root);
     return res;
   }
+
   add(value) {
     const newNode = new Node(value);
     let current;

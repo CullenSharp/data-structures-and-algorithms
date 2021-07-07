@@ -1,0 +1,16 @@
+{
+  "name": "stack-queue-brackets",
+  "version": "1.0.0",
+  "description": "June 30, 2021",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}

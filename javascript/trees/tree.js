@@ -25,37 +25,45 @@ module.exports = class BinaryTree {
   }
 
   postOrder() {
+    let res = [];
+
     const walk = (node) => {
       if(node.left){ walk(node.left); }
       if(node.right){ walk(node.right); }
 
-      console.log(node.value);
+      res.push(node.value);
     };
 
     walk(this.root);
+    return res;
   }
 
   preOrder() {
+    let res = [];
     const walk = (node) => {
-      console.log(node.value);
+      res.push(node.value);
 
       if(node.left){ walk(node.left); }
       if(node.right){ walk(node.right); }
     };
 
     walk(this.root);
+    return res;
   }
 
   inOrder() {
+    let res = [];
+
     const walk = (node) => {
       if(node.left){ walk(node.left); }
 
-      console.log(node.value);
+      res.push(node.value);
 
       if(node.right){ walk(node.right); }
     };
 
     walk(this.root);
+    return res;
   }
 
   contains(value, res = false) {

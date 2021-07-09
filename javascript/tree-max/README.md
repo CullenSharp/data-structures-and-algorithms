@@ -1,6 +1,13 @@
 # Trees
 
-July 5nd, 2021
+Revised: July 8th, 2021
+
+## Getting started
+
+```BASH
+npm i
+npm test
+```
 
 The goal here is to create a method on the binary tree class that returns the greatest number contained within. If the tree contains 0,2,5,6,20, the algorithm will traverse the tree and return 20.
 

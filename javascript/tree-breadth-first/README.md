@@ -1,6 +1,13 @@
 # Breadth First
 
-July 6th, 2021
+Revised: July 8th, 2021
+
+## Getting Started
+
+```BASH
+npm i
+npm test
+```
 
 Today, we'll add a method to our binary tree class that allows use to run breadth first searches. What does that mean? It means we check the left and right before descending to the next level.
 

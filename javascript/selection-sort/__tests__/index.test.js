@@ -1,0 +1,31 @@
+const insertionSort = require('../index');
+
+describe('testing insertion sort function', () => {
+  it('Nearly sorted array', () => {
+    const expectedOutputArray = [2, 3, 5, 7, 11, 13];
+    const inputArray = [2, 3, 5, 7, 13, 11];
+
+    expect(insertionSort(inputArray)).toEqual(expectedOutputArray);
+  });
+
+  it('Few uniques array', () => {
+    const expectedOutputArray = [5, 5, 5, 7, 7, 12];
+    const inputArray = [5, 12, 7, 5, 5, 7];
+
+    expect(insertionSort(inputArray)).toEqual(expectedOutputArray);
+  });
+
+  it('Reverse-sorted array', () => {
+    const expectedOutputArray = [-2, 5, 8, 12, 18, 20];
+    const inputArray = [20, 18, 12, 8, 5, -2];
+
+    expect(insertionSort(inputArray)).toEqual(expectedOutputArray);
+  });
+
+  it('Happy path array', () => {
+    const expectedOutputArray = [4, 8, 15, 16, 23, 42];
+    const inputArray = [8, 4, 23, 42, 16, 15];
+
+    expect(insertionSort(inputArray)).toEqual(expectedOutputArray);
+  });
+});

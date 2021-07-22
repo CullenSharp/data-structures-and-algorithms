@@ -5,14 +5,31 @@ describe('testing merge sort algorithm', () => {
     const expectedOutputArray = [4, 8, 15, 16, 23, 42];
     const inputArray = [8, 4, 23, 42, 16, 15];
 
-    expect(mergeSort(inputArray)).toEqual(expectedOutputArray);
+    mergeSort(inputArray);
+    expect(inputArray).toEqual(expectedOutputArray);
+  });
+
+  test('reverse sorted array', () => {
+    const expectedOutputArray = [-2, 5, 8, 12, 18, 20];
+    const inputArray = [20, 18, 12, 8, 5, -2];
+
+    mergeSort(inputArray);
+    expect(inputArray).toEqual(expectedOutputArray);
+  });
+
+  test('few uniques', () => {
+    const expectedOutputArray = [5, 5, 5, 7, 7, 12];
+    const inputArray = [5, 12, 7, 5, 5, 7];
+
+    mergeSort(inputArray);
+    expect(inputArray).toEqual(expectedOutputArray);
+  });
+
+  test('nearly sorted', () => {
+    const expectedOutputArray = [2, 3, 5, 7, 11, 13];
+    const inputArray = [2, 3, 5, 7, 13, 11];
+
+    mergeSort(inputArray);
+    expect(inputArray).toEqual(expectedOutputArray);
   });
 });
-
-// [8,4,23,42,16,15]
-
-// For your own understanding, consider also stepping through these inputs:
-
-// Reverse-sorted: [20,18,12,8,5,-2]
-// Few uniques: [5,12,7,5,5,7]
-// Nearly-sorted: [2,3,5,7,13,11]

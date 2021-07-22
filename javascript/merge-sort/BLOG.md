@@ -77,6 +77,8 @@ ALGORITHM Merge(left, right, arr)
 
 A helper function we'll call `merge` handles the comparisons and merging. the algorithm takes in two halves(left/right) and their unsorted combination. Every element is then compared against it's adjacent values and sorted. The two sorted sub-lists are then merged.
 
+![UML](./assets/UML.png)
+
 ## ⚙️ Efficiency
 
 Time-complexity: O(n ㏒ n)

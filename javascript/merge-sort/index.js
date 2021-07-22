@@ -5,6 +5,7 @@ function merge(left, right, arr) {
   let k = 0;
 
   while (i < left.length && j < right.length) {
+    //  if left value <= to right value
     if (left[i] <= right[j]) {
       arr[k] = left[i];
       i += 1;
@@ -14,10 +15,14 @@ function merge(left, right, arr) {
     }
     k += 1;
   }
-  if (i === left.length) {
-    arr.concat(right.slice(k, right.length));
-  } else {
-    arr.concat(left.slice(i, left.length));
+  for (k; k < arr.length; k += 1) {
+    if (i === left.length) {
+      arr[k] = right[j];
+      j += 1;
+    } else {
+      arr[k] = left[i];
+      i += 1;
+    }
   }
 //   if i = left.length
 //   set remaining entries in arr to remaining values in right
@@ -38,7 +43,6 @@ function mergeSort(arr) {
 
     merge(left, right, arr);
   }
-  return arr;
 }
 
 module.exports = mergeSort;

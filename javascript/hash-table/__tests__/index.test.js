@@ -26,3 +26,9 @@ test('should return a value with a given key', () => {
 test('should return the index of a given key', () => {
   expect(hashTable.hash('Jacob')).toEqual(201)
 })
+
+test('Successfully handles collision', () => {
+  hashTable.add('lll', 'buzz')
+  expect(hashTable.get('lll')).toEqual({ lll: 'buzz' })
+  expect(hashTable.get('foo')).toEqual({ foo: 'bar' })
+})

@@ -51,7 +51,7 @@ class HashTable {
 
   add (key, value) {
     const hash = this.hash(key)
-    if (!this.buckets[this.hash]) { this.buckets[hash] = new LinkedList() }
+    if (!this.buckets[hash]) { this.buckets[hash] = new LinkedList() }
 
     const entry = { [key]: value }
     this.buckets[hash].insert(entry)
